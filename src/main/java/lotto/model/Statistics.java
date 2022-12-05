@@ -2,6 +2,7 @@ package lotto.model;
 
 import lotto.constants.PrizeDivision;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Statistics {
@@ -38,18 +39,22 @@ public class Statistics {
     }
 
     private long accumulatePrizeAmount() {
+        /*
         long prizeAmountSummation = 0;
 
         for (PrizeDivision division : PrizeDivision.values()) {
             prizeAmountSummation += division.getPrizeAmount() * getDivisionCount(division.ordinal());
         }
         return prizeAmountSummation;
+        */
 
-        /* -- 중간에 곱셈을 할 수가 없어서 사용 불가.
         return Arrays.stream(PrizeDivision.values())
-                .mapToLong(PrizeDivision::getPrizeAmount)
+                .mapToLong(this::calculatePrizeAmount)
                 .sum();
-         */
+    }
+
+    private long calculatePrizeAmount(PrizeDivision division){
+        return division.getPrizeAmount() * getDivisionCount(division.ordinal());
     }
 
     public int getDivisionCount(int division) {
