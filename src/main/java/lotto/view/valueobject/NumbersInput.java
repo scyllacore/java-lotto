@@ -4,12 +4,12 @@ import lotto.exception.IllegalArgument;
 
 import java.util.regex.Pattern;
 
-public class Numbers {
+public class NumbersInput {
     private final Pattern numbersPattern = Pattern.compile("^(\\d{1,2},){5}(\\d{1,2})$");
 
     private final String numbers;
 
-    public Numbers(String numbers) {
+    public NumbersInput(String numbers) {
        validateNumbers(numbers);
         this.numbers = numbers;
     }

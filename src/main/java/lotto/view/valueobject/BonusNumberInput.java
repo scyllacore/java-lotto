@@ -4,12 +4,12 @@ import lotto.exception.IllegalArgument;
 
 import java.util.regex.Pattern;
 
-public class BonusNumber {
+public class BonusNumberInput {
     private final Pattern bonusNumberPattern = Pattern.compile("^\\d{1,2}$");
 
     private final String bonusNumber;
 
-    public BonusNumber(String bonusNumber) {
+    public BonusNumberInput(String bonusNumber) {
         validateBonusNumber(bonusNumber);
         this.bonusNumber = bonusNumber;
     }

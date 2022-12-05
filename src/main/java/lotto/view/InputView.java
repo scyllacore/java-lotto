@@ -1,9 +1,9 @@
 package lotto.view;
 
 import camp.nextstep.edu.missionutils.Console;
-import lotto.view.valueobject.AmountPaid;
-import lotto.view.valueobject.BonusNumber;
-import lotto.view.valueobject.Numbers;
+import lotto.view.valueobject.AmountPaidInput;
+import lotto.view.valueobject.BonusNumberInput;
+import lotto.view.valueobject.NumbersInput;
 
 public class InputView {
     private static final String AMOUNT_PAID_INPUT_MESSAGE = "구입금액을 입력해 주세요.";
@@ -12,7 +12,7 @@ public class InputView {
 
     public static String readAmountPaid() {
         printAmountPaidInputMessage();
-        return new AmountPaid(input()).getAmountPaid();
+        return new AmountPaidInput(input()).getAmountPaid();
     }
 
     private static void printAmountPaidInputMessage() {
@@ -21,7 +21,7 @@ public class InputView {
 
     public static String readNumbers() {
         printNumbersInputMessage();
-        return new Numbers(input()).getNumbers();
+        return new NumbersInput(input()).getNumbers();
     }
 
     private static void printNumbersInputMessage() {
@@ -30,7 +30,7 @@ public class InputView {
 
     public static String readBonusNumber() {
         printBonusNumberInputMessage();
-        return new BonusNumber(input()).getBonusNumber();
+        return new BonusNumberInput(input()).getBonusNumber();
     }
 
     private static void printBonusNumberInputMessage() {
